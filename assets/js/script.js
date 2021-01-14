@@ -1,11 +1,11 @@
 
-var startButton = document.querySelector(".start-button");
-var questionListEL = document.querySelector("#question-list");
+var questionListEL = document.getElementById('questionlist');
+var currentQuestion = 0;
 
 var questionList = [
     {
-        "question" : "question 1",
-        "choice": ["choice 11", "choice12", "choice 13", "choice 14"],
+        "question" : "Commonly used datatypes Donot include:",
+        "choice": ["choice 11", "choice 12", "choice 13", "choice 14"],
         "correct answer": "1",
     },
     {
@@ -29,9 +29,42 @@ var questionList = [
         "correct answer": "1",
     }
 ];
+function getQuestionForId(id) {
+    return questionList[currentQuestion].question;
+}
+function createQuestion() {
 
-console.log(questionList[2]["correct answer"]);
+    var questionTitle = document.createElement("p");
+    questionTitle.setAttribute("id", "questionTitle");
+    questionTitle.textContent = getQuestionForId(currentQuestion);
+    questionListEL.append(questionTitle);
 
-startButton.addEventListener("click", function() {
-        window.location = "quiz.html";
-  });
+    for (var i=0; i<4; i++) {
+        var choiceButton = document.createElement("Button");
+        choiceButton.textContent = questionList[currentQuestion].choice[i];
+        choiceButton.setAttribute("class", "choice-button");
+        choiceButton.addEventListener("click", selectAnswer);
+        choiceButton.value = i + 1;
+        questionListEL.append(choiceButton);
+    }
+}
+function updateQuestion() {
+    var questionTitleEl = document.getElementById('questionTitle');
+    questionTitle.textContent = questionList[currentQuestion].question;
+
+    var choiceButtons = document.querySelectorAll(".choice-button"); 
+    
+    for (var i=0; i<choiceButtons.length; i++) {
+        choiceButtons[i].textContent = questionList[currentQuestion].choice[i];
+    }
+
+}
+
+function selectAnswer() {
+    currentQuestion = currentQuestion + 1;
+    if (currentQuestion < questionList.length) {
+        updateQuestion();
+    }
+}
+
+  createQuestion();
