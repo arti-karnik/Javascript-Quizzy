@@ -6,27 +6,37 @@ var questionList = [
     {
         "question" : "Commonly used datatypes Donot include:",
         "choice": ["choice 11", "choice 12", "choice 13", "choice 14"],
-        "correct answer": "1",
+        "correctAnswer": "1",
     },
     {
-        "question" : "question 2",
-        "choice": ["choice 21", "choice 22", "choice 23", "choice 24"],
-        "correct answer": "2",
+        "question" : "What is the HTML tag under which one can write the JavaScript code?",
+        "choice": ["<javascript>", "<scripted>", "<script>", "<js>"],
+        "correctAnswer": "3",
     },
     {
-        "question" : "question 3",
-        "choice": ["choice 31", "choice 32", "choice 33", "choice 34"],
-        "correct answer": "3",
+        "question" : " Which of the following is the correct syntax to display “message” in an alert box using JavaScript?",
+        "choice": ["alertbox(“message”)", "msg(“message”)", "msgbox(“message”)", "alert(“message”)"],
+        "correctAnswer": "4",
     },
     {
-        "question" : "question 4",
-        "choice": ["choice 41", "choice 42", "choice 43", "choice 44"],
-        "correct answer": "0",
+        "question" : "Which of the following is not a reserved word in JavaScript?",
+        "choice": ["interface", "throws", "program", "short"],
+        "correctAnswer": "3",
     },
     {
-        "question" : "question 5",
-        "choice": ["choice 51", "choice 52", "choice 53", "choice 54"],
-        "correct answer": "1",
+        "question" : "What should appear at the very end of your JavaScript?",
+        "choice": ["The </script>", "The <script>", "The END statement", "None of the above"],
+        "correctAnswer": "1",
+    },
+    {
+        "question" : "JavaScript entities start with _______ and end with _________.",
+        "choice": ["Semicolon, colon", "Semicolon, Ampersand", "Ampersand, colon", " Ampersand, semicolon"],
+        "correctAnswer": "4",
+    },
+    {
+        "question" : "Which of the following best describes JavaScript?",
+        "choice": ["a low-level programming language.", "a scripting language precompiled in the browser.", "a compiled scripting language.", "an object-oriented scripting language."],
+        "correctAnswer": "4",
     }
 ];
 function getQuestionForId(id) {
@@ -57,10 +67,17 @@ function updateQuestion() {
     for (var i=0; i<choiceButtons.length; i++) {
         choiceButtons[i].textContent = questionList[currentQuestion].choice[i];
     }
-
 }
-
+function checkAnswer(userAnswer, correctAnswer) {
+    if (userAnswer == correctAnswer) {
+        alert("Sahi jawab! ");
+    } else {
+        alert("galat jawab!!");
+    }
+}
 function selectAnswer() {
+    checkAnswer(this.value, questionList[currentQuestion].correctAnswer);
+
     currentQuestion = currentQuestion + 1;
     if (currentQuestion < questionList.length) {
         updateQuestion();
