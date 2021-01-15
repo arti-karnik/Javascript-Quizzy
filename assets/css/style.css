@@ -8,7 +8,7 @@ body {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: #ff9824;
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -38,4 +38,12 @@ header {
     color: white;
     align-items: center;
     margin-top: 10px;
+}
+
+#row-highscore {
+  background-color: #eee5f7;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: bold;
 }

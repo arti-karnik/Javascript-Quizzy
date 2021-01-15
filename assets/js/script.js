@@ -1,10 +1,18 @@
 
 var questionListEL = document.getElementById('questionlist');
 var timeRemainingEL = document.getElementById('timeRemaining');
+var startButton = document.getElementById('start');
 
 var currentQuestion = 0;
-var seconds= 10;
+var seconds= 100;
 var timer;
+var buzzSound;
+var score = 0;
+
+function showscore() {
+    console.log("inn");
+    alert("score "+ score);
+}
 
 var questionList = [
     {
@@ -21,7 +29,7 @@ var questionList = [
         "question" : " Which of the following is the correct syntax to display “message” in an alert box using JavaScript?",
         "choice": ["alertbox(“message”)", "msg(“message”)", "msgbox(“message”)", "alert(“message”)"],
         "correctAnswer": "4",
-    },
+    }/*,
     {
         "question" : "Which of the following is not a reserved word in JavaScript?",
         "choice": ["interface", "throws", "program", "short"],
@@ -41,43 +49,53 @@ var questionList = [
         "question" : "Which of the following best describes JavaScript?",
         "choice": ["a low-level programming language.", "a scripting language precompiled in the browser.", "a compiled scripting language.", "an object-oriented scripting language."],
         "correctAnswer": "4",
-    }
+    }*/
 ];
 function init() {
     createQuestionElement();
     startTimer();
+    startGame();
 }
 function gameOver() {
-    alert("Game over!");
     clearInterval(timer);
-
+    console.log("score: " + score);
+    alert("score " + score);
+    localStorage.setItem("score",score);
+    window.location.href = "gameOver.html";
+}
+function startGame() {
+    score = 0;
+    buzzSound = new Audio('./assets/images/buzz.wav');
 }
 function startTimer() {
-
-    timer = setInterval(function() {
-        seconds -= 1;
-        timeRemainingEL.innerHTML = seconds;
-        if (seconds == 0) {
-            gameOver();
-        }
-    }, 1000);
+    if (timeRemainingEL) {
+        timer = setInterval(function() {
+            seconds -= 1;
+            timeRemainingEL.innerHTML = seconds;
+            if (seconds == 0) {
+                gameOver();
+            }
+        }, 1000);
+    }    
 }
 function getQuestionForId(id) {
     return questionList[currentQuestion].question;
 }
 function createQuestionElement() {
-    var questionTitle = document.createElement("p");
-    questionTitle.setAttribute("id", "questionTitle");
-    questionTitle.textContent = getQuestionForId(currentQuestion);
-    questionListEL.append(questionTitle);
-
-    for (var i=0; i<4; i++) {
-        var choiceButton = document.createElement("Button");
-        choiceButton.textContent = questionList[currentQuestion].choice[i];
-        choiceButton.setAttribute("class", "choice-button");
-        choiceButton.addEventListener("click", selectAnswer);
-        choiceButton.value = i + 1;
-        questionListEL.append(choiceButton);
+    if (questionListEL) {
+        var questionTitle = document.createElement("p");
+        questionTitle.setAttribute("id", "questionTitle");
+        questionTitle.textContent = getQuestionForId(currentQuestion);
+        questionListEL.append(questionTitle);
+    
+        for (var i=0; i<4; i++) {
+            var choiceButton = document.createElement("Button");
+            choiceButton.textContent = questionList[currentQuestion].choice[i];
+            choiceButton.setAttribute("class", "choice-button");
+            choiceButton.addEventListener("click", selectAnswer);
+            choiceButton.value = i + 1;
+            questionListEL.append(choiceButton);
+        }
     }
 }
 
@@ -93,9 +111,10 @@ function updateQuestion() {
 }
 function checkAnswer(userAnswer, correctAnswer) {
     if (userAnswer == correctAnswer) {
-        alert("Sahi jawab! ");
+        score = score + 10;
+        console.log("score : " + score);
+
     } else {
-        alert("galat jawab!!");
         wrongAnswer();
     }
 }
@@ -105,10 +124,17 @@ function selectAnswer() {
     currentQuestion = currentQuestion + 1;
     if (currentQuestion < questionList.length) {
         updateQuestion();
+    } else {
+       gameOver();
     }
 }
+
 function wrongAnswer() {
+    console.log(buzzSound);
+
     seconds = seconds - 5;
+    buzzSound.play();
+
     if (seconds <= 0) {
         gameOver();
     }
