@@ -1,7 +1,10 @@
 
 var questionListEL = document.getElementById('questionlist');
+var timeRemainingEL = document.getElementById('timeRemaining');
+
 var currentQuestion = 0;
-var totalTime = 180;
+var seconds= 10;
+var timer;
 
 var questionList = [
     {
@@ -42,6 +45,22 @@ var questionList = [
 ];
 function init() {
     createQuestionElement();
+    startTimer();
+}
+function gameOver() {
+    alert("Game over!");
+    clearInterval(timer);
+
+}
+function startTimer() {
+
+    timer = setInterval(function() {
+        seconds -= 1;
+        timeRemainingEL.innerHTML = seconds;
+        if (seconds == 0) {
+            gameOver();
+        }
+    }, 1000);
 }
 function getQuestionForId(id) {
     return questionList[currentQuestion].question;
@@ -89,7 +108,10 @@ function selectAnswer() {
     }
 }
 function wrongAnswer() {
-
+    seconds = seconds - 5;
+    if (seconds <= 0) {
+        gameOver();
+    }
 }
 
-  init();
+init();
