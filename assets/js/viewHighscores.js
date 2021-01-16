@@ -14,13 +14,15 @@
         for (var i=0; i<highscores.length; i++) {
             var item = highscores[i];
     
-            var row = document.createElement("hr");
-            row.setAttribute("Id", "score-row");
-            row.textContent =  " " +  item.name + " - " + item.score;
+            var row = document.createElement('h4');
+             row.innerHTML =  " "+ " "  +  item.name + " - " + item.score;
+             row.setAttribute("id", "row");
             highscoreEl.prepend(row);
-        }
+
+             }
     }
 
+   
     
 clearButton.addEventListener("click", function() {
     var clear = confirm("Are you sure you want to clear all scores, if Yes it wont be back again ?");

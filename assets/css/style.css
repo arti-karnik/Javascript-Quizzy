@@ -1,49 +1,106 @@
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #efefef;
+}
+section {
+  padding-top: 50px;
 }
 
 .wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #ff9824;
-  border-radius: 5px;
-  border-width: 1px;
+  padding: 30px 40px;
+  margin: 0px auto;
+  border-width: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
-  margin: 0 auto;
-  padding: 30px 40px;
+  width: 50rem;
 }
 
 header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
-}
-.start-button {
-    background-color: purple;
-    font-size: 20px;
-    height: 50px;
-    color: white;
-}
-.choice-button {
-    display: block;
-    background-color: #492e6d;
-    font-size: 20px;
-    height: 50px;
-    color: white;
-    align-items: center;
-    margin-top: 10px;
+  
+    background-color: #333;;
+    background-color: #4e3172;
+    overflow: hidden;
 }
 
-#row-highscore {
-  background-color: #eee5f7;
+.button {
+    background-color: #482c68;
+    font-size: 20px;
+    height: 40px;
+    color: white;
+}
+
+
+.choice {
+  padding-top: 10px;
   text-align: left;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: sans-serif;
   font-size: 20px;
+}
+#result {
+  color: black;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.header {
+   overflow: hidden;
+  height: 120px;
+  background-color: #4e3172;
+}
+#view-highscores {
+  float: left;
+  color: #f2f2f2;
+} 
+.header .title {
+  color: white;
+  font-family: sans-serif;
   font-weight: bold;
+  text-align: center;
+  padding-top: 25px;
+}
+
+
+.header a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  padding-top: 20px;
+  font-size: 20px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: wheat;
+}
+.header a {
+  color: white;
+
+}
+.header a.active {
+  color: white;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+#gameover {
+  text-align: center;
+}
+#row {
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+  color: black;
+  font-size: 18px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #efe7f9;
+  padding: 10px;
+}
+#choice-label {
+  padding-left: 10px;
 }

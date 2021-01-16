@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Game Over </title>
 </head>
 <body>
-      <header>
-          <h3> <span style= "float: left;"> View High score </span></h3>
-          <h3> <span style= "float: right;"> Time Remaining:  </span></h3>
-      </header>
-
+      <!-- ======= Header/ Navbar starts ======= -->
+     <header class="header">
+        <h2 class="title">Coding Quiz challenge </h2>
+        <a href="index.html">
+            Home
+        </a>
+        <a href="ViewHighScores.html">
+            View HighScores
+        </a>
+       
+        <a href="#" id="timeRemaining" style="float: right;">
+            Total Time: 180
+        </a>
+   </header>
+    <!-- ======= Header ends here ======= -->
+  
       <section>
           <div class="wrapper" style="width: 50rem;">
                 <div style="text-align: center;">
@@ -22,7 +36,7 @@
                         <br> <br>
                         Enter Initials here : 
                         <input type="text" id="initial" placeholder="">
-                        <button id="submit"> Submit </button>
+                        <button id="submit" class="button"> Submit </button>
                     </p>
                     <br>
                 </div>
