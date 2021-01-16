@@ -2,12 +2,13 @@
 var questionListEL = document.getElementById('questionlist');
 var timeRemainingEL = document.getElementById('timeRemaining');
 var resultEl = document.getElementById('result');
-var answerEl = document.getElementById('answer');
 var questionNo = document.getElementById('questionNo');
+var warningEl  = document.getElementById('warning');
+
 var buzzSound = new Audio('./assets/images/buzz.wav');
 var timer;
 var currentQuestion = 0;
-var seconds= 100;
+var seconds= 20;
 var score = 0;
 
 var questionList = [
@@ -74,7 +75,17 @@ function startTimer() {
         seconds -= 1;
         timeRemainingEL.innerHTML =  "Time remaining: " + seconds;
         if (seconds <= 0) {
-            gameOver();
+            warningEl.innerHTML = "Time-up!!! It's Game Over"
+
+            clearInterval(timer);
+
+            setTimeout(() => {
+                gameOver();
+            }, 3000);
+        }
+        if (seconds <= 10 && seconds > 0) {
+            warningEl.hidden = false;
+            warningEl.innerHTML = "ALERT: Time is about to finish"
         }
     }, 1000);
 }
@@ -93,7 +104,6 @@ function createQuestionElement() {
 }
 
 function gameOver() {
-    clearInterval(timer);
     localStorage.setItem("score",score);
     window.location.href = "gameOver.html";
 }
@@ -121,7 +131,7 @@ function createRadioButton(text, value) {
 }
 function clickAnswer(userAnswer, correctAnswer) {
     
-    resultEl.hidden = false;
+    resultEl.style.display = "block";
     if (userAnswer == correctAnswer) {
         rightAnswer();
     } else {
@@ -146,7 +156,7 @@ function updateQuestionDetails(number) {
         }
 }
 function updateQuestionNo() {
-    resultEl.hidden = true;
+    resultEl.style.display = "none";
     currentQuestion = currentQuestion + 1;
     
     if (currentQuestion < questionList.length) {
@@ -157,7 +167,7 @@ function updateQuestionNo() {
 }
 function rightAnswer() {
     score = score + 10;
-    answerEl.innerHTML = "Correct!";
+    resultEl.innerHTML = "Correct!";
 }
 function wrongAnswer() {
     buzzSound.play();
@@ -165,6 +175,7 @@ function wrongAnswer() {
     if (seconds <= 0) {
         gameOver();
     }
-    answerEl.innerHTML = "Wrong!";
+
+    resultEl.innerHTML = "Wrong!";
 }
 init();

@@ -31,7 +31,6 @@ function createScoreObject(name, totalScore) {
         "score": totalScore,
     }
     return object;
-    
 }
 function saveScore() {
     var object = createScoreObject(name, totalScore);

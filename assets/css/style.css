@@ -4,7 +4,7 @@ body {
   background-color: #efefef;
 }
 section {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .wrapper {
@@ -41,11 +41,12 @@ header {
 #result {
   color: gray;
   font-size: 20px;
-}
-#result hr {
-  size: 1;
-  width: 100%;
-  color: gray;
+  height: 1px;
+  background: lightgray;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  display: none;
 }
 
 .header {
@@ -71,7 +72,7 @@ header {
   color: #f2f2f2;
   padding: 14px 16px;
   padding-top: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 13px;
   font-size: 17px;
   text-align: right;
   text-decoration: none;
@@ -79,26 +80,23 @@ header {
 
 .header a:hover {
   color: white;
-  background-color: green;
   border-radius: 25px;
-  border: 2px solid #1e5294;
+  border-color: black;
+  background-color: rgb(156, 97, 151);
 }
 .header a.active {
-    background-color: #1e5294;
+  background-color: #1e5294;
   color : white;
   border-radius: 25px;
   border: 2px solid #1e5294;
 }
-
 .float-left {
   float: left;
 }
 .float-right {
   float: right;
 }
-#gameover {
-  text-align: center;
-}
+
 #row {
   text-align: left;
   border-bottom: 1px solid lightgray;
@@ -113,4 +111,21 @@ header {
 }
 .score {
   font-weight: bold;
+}
+header p {
+  color: wheat;
+  font-size: 20px;
+  font-weight: bold;
+  float: right;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 13px;
+}
+#warning {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom:20px;
+  text-align: center;
 }
