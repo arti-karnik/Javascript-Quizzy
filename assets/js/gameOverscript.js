@@ -9,7 +9,7 @@ var name;
 var scores;
 
 submitButton.addEventListener("click", function(){
-
+    
     if (validateInitial()) {
         saveScore();
         window.location = "ViewHighScores.html";
@@ -19,24 +19,24 @@ submitButton.addEventListener("click", function(){
 function init() {
     var correct = localStorage.getItem("score")/10;
     console.log(correct);
-
+    
     scoreEl.textContent = localStorage.getItem("score");
     correctEl.textContent = correct + "/10";
 }
 function createScoreObject(name, totalScore) {
     console.log(name, totalScore);
-
+    
     var object = {
         "name": name, 
         "score": totalScore,
     }
     return object;
-
+    
 }
 function saveScore() {
     var object = createScoreObject(name, totalScore);
     var savedData = localStorage.getItem("highscores");
-
+    
     if (savedData === null) { 
         scores = [object];
     } else {
@@ -51,7 +51,7 @@ function validateInitial() {
         return false;
     } 
     name = nameEl.value;
-
+    
     return true;
 }
 init();

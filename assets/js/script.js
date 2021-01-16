@@ -1,18 +1,14 @@
 
 var questionListEL = document.getElementById('questionlist');
 var timeRemainingEL = document.getElementById('timeRemaining');
-var startButton = document.getElementById('start');
 var resultEl = document.getElementById('result');
 var answerEl = document.getElementById('answer');
 var questionNo = document.getElementById('questionNo');
-
-var currentQuestion = 0;
-var seconds= 10;
-var timer;
 var buzzSound = new Audio('./assets/images/buzz.wav');
+var timer;
+var currentQuestion = 0;
+var seconds= 100;
 var score = 0;
-var isCorrect = false;
-
 
 var questionList = [
     {
@@ -49,22 +45,49 @@ var questionList = [
         "question" : "Which of the following best describes JavaScript?",
         "choice": ["a low-level programming language.", "a scripting language precompiled in the browser.", "a compiled scripting language.", "an object-oriented scripting language."],
         "correctAnswer": "3",
+    },
+    {
+        "question" : "Which of the following is correct about features of JavaScript?",
+        "choice": ["It can not Handling dates and time.", "JavaScript is a object-based scripting language.", "JavaScript is not interpreter based scripting language.", "All of the above"],
+        "correctAnswer": "1",
+    },
+    {
+        "question" : "Choose the correct JavaScript syntax to change the content of the following HTML code.",
+        "choice": ["document.getElement (“letsfindcourse\").innerHTML = \"I am a letsfindcourse\";", "document.getElementById (“letsfindcourse\").innerHTML = \"I am a letsfindcourse\";", " document.getId (“letsfindcourse\") = \"I am a letsfindcourse\";", "document.getElementById (“letsfindcourse\").innerHTML = I am a letsfindcourse;"],
+        "correctAnswer": "1",
+    },
+    {
+        "question" : "Which of the following is not Javascript frameworks or libraries?",
+        "choice": ["Polymer", "Meteor.", "Cassandra", "jQuery"],
+        "correctAnswer": "2",
     }
 ];
 function init() {
-
+    
     createQuestionElement();
     startTimer();
-  //  startGame();
+}
+function startTimer() {
+    score = 0;
+    
+    timer = setInterval(function() {
+        seconds -= 1;
+        timeRemainingEL.innerHTML =  "Time remaining: " + seconds;
+        if (seconds <= 0) {
+            gameOver();
+        }
+    }, 1000);
 }
 function createQuestionElement() {
-
-    var questionTitle = getQuestionTitleElement(currentQuestion);
-    questionListEL.appendChild(questionTitle);
     
-     for (var i=0; i<4; i++) {
-
-        var choiceButton = makeRadioButton(questionList[currentQuestion].choice[i],i);
+    var title = document.createElement("p");
+    title.setAttribute("id", "questionTitle");
+    title.textContent = questionList[currentQuestion].question;
+    questionListEL.appendChild(title);
+    
+    for (var i=0; i<4; i++) {
+        
+        var choiceButton = createRadioButton(questionList[currentQuestion].choice[i],i);
         questionListEL.appendChild(choiceButton);
     }
 }
@@ -72,133 +95,76 @@ function createQuestionElement() {
 function gameOver() {
     clearInterval(timer);
     localStorage.setItem("score",score);
-
-   // window.location.href = "gameOver.html";
-}
-function startTimer() {
-    score = 0;
-    if (timeRemainingEL) {
-        timer = setInterval(function() {
-            seconds -= 1;
-            timeRemainingEL.innerHTML =  "Time remaining: " + seconds;
-            if (seconds <= 0) {
-                gameOver();
-            }
-        }, 1000);
-    }    
+    window.location.href = "gameOver.html";
 }
 
-function getQuestionTitleElement(questionNo) {
-    var title = document.createElement("p");
-    title.setAttribute("id", "questionTitle");
-    title.textContent = questionList[questionNo].question;
-    return title;
-}
-
-function makeRadioButton(text, value) {
-
+function createRadioButton(text, value) {
+    
     var mydiv = document.createElement("div");
     
     var label = document.createElement("label");
     label.setAttribute("id", "choice-label");
-
+    label.innerText =  questionList[currentQuestion].choice[value];
+    
     var radio = document.createElement("input");
     radio.type = "radio";
     radio.value = value;
     radio.checked = false;
     radio.setAttribute("id", "choice-button");
     radio.addEventListener('change', function() {
-       clickAnswer(this.value, questionList[currentQuestion].correctAnswer);
+        clickAnswer(this.value, questionList[currentQuestion].correctAnswer);
     });
-
+    
     mydiv.appendChild(radio);
     mydiv.appendChild(label);
-
-    label.innerText =  questionList[currentQuestion].choice[value];
-
     return mydiv;
 }
-function updateQuestionNUmber() 
-{
-    if (currentQuestion < questionList.length) {
-        currentQuestion = currentQuestion + 1; 
-    }
-}
-function setQuestion(number) {
-    console.log("question non: " + questionNo);
-
-    var title = document.getElementById('questionTitle');
-    title.textContent = questionList[number].question;
-    
-    questionNo.textContent = "Question " + (number + 1) + " of " + questionList.length;
-}   
-function showResult(correct) {
-
-    resultEl.hidden = false;
-
-    if (correct) {
-        answerEl.innerHTML = "Correct!";
-    } else {
-        answerEl.innerHTML = "Wrong!";
-    }
-}
 function clickAnswer(userAnswer, correctAnswer) {
-
+    
     resultEl.hidden = false;
     if (userAnswer == correctAnswer) {
         rightAnswer();
     } else {
         wrongAnswer();
     }
-    changeQuestion();
+    setTimeout(() => {
+        updateQuestionNo();
+    }, 1000);
 }
-function changeQuestion() {
+function updateQuestionDetails(number) {
+    questionNo.textContent = "Question " + (currentQuestion + 1) + " of " + questionList.length;
+        
+        var question = document.getElementById('questionTitle')
+        question.textContent = questionList[currentQuestion].question;
+        
+        var choiceLabel = document.querySelectorAll("#choice-label"); 
+        var choicebutton = document.querySelectorAll("#choice-button"); 
+        
+        for (var i=0; i<choiceLabel.length; i++) {
+            choiceLabel[i].textContent = questionList[currentQuestion].choice[i]; 
+            choicebutton[i].checked = false;
+        }
+}
+function updateQuestionNo() {
+    resultEl.hidden = true;
     currentQuestion = currentQuestion + 1;
     
     if (currentQuestion < questionList.length) {
-        setTimeout(() => {
-            resultEl.hidden= true;
-            var question = document.getElementById('questionTitle')
-            question.textContent = questionList[currentQuestion].question;
-            
-            var choiceLabel = document.querySelectorAll("#choice-label"); 
-            var choicebutton = document.querySelectorAll("#choice-button"); 
-
-            for (var i=0; i<choiceLabel.length; i++) {
-                choiceLabel[i].textContent = questionList[currentQuestion].choice[i]; 
-                choicebutton[i].checked = false;
-               // choiceButton[i].value = i;
-
-            }
-            questionNo.textContent = "Question " + (currentQuestion + 1) + " of " + questionList.length;
-
-
-        }, 1000);
-
+        updateQuestionDetails(currentQuestion);
     } else {
-        setTimeout(() => {
-            gameOver();
-     }, 2000);
+         gameOver();
     }
-}
-function selectAnswer() {
-
-    //checkAnswer(this.value, questionList[currentQuestion].correctAnswer);
-}
-function showResult() {
-
 }
 function rightAnswer() {
     score = score + 10;
     answerEl.innerHTML = "Correct!";
 }
 function wrongAnswer() {
-    seconds = seconds - 5;
     buzzSound.play();
+    seconds = seconds - 5;
     if (seconds <= 0) {
         gameOver();
     }
     answerEl.innerHTML = "Wrong!";
 }
-
 init();
