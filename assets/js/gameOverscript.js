@@ -2,6 +2,8 @@
 var submitButton = document.getElementById('submit');
 var scoreEl = document.getElementById('score1');
 var nameEl = document.getElementById('initial');
+var correctEl = document.getElementById('correct');
+
 var totalScore = localStorage.getItem("score");
 var name;
 var scores;
@@ -12,11 +14,14 @@ submitButton.addEventListener("click", function(){
         saveScore();
         window.location = "ViewHighScores.html";
     }
-  // 
 })
 
 function init() {
+    var correct = localStorage.getItem("score")/10;
+    console.log(correct);
+
     scoreEl.textContent = localStorage.getItem("score");
+    correctEl.textContent = correct + "/10";
 }
 function createScoreObject(name, totalScore) {
     console.log(name, totalScore);

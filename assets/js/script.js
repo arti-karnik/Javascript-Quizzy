@@ -29,27 +29,27 @@ var questionList = [
         "question" : " Which of the following is the correct syntax to display “message” in an alert box using JavaScript?",
         "choice": ["alertbox(“message”)", "msg(“message”)", "msgbox(“message”)", "alert(“message”)"],
         "correctAnswer": "3",
-    }/*,
+    },
     {
         "question" : "Which of the following is not a reserved word in JavaScript?",
         "choice": ["interface", "throws", "program", "short"],
-        "correctAnswer": "3",
+        "correctAnswer": "2",
     },
     {
         "question" : "What should appear at the very end of your JavaScript?",
-        "choice": ["The </script>", "The <script>", "The END statement", "None of the above"],
-        "correctAnswer": "1",
+        "choice": ["</script>", "<script>", "The END statement", "None of the above"],
+        "correctAnswer": "0",
     },
     {
         "question" : "JavaScript entities start with _______ and end with _________.",
         "choice": ["Semicolon, colon", "Semicolon, Ampersand", "Ampersand, colon", " Ampersand, semicolon"],
-        "correctAnswer": "4",
+        "correctAnswer": "3",
     },
     {
         "question" : "Which of the following best describes JavaScript?",
         "choice": ["a low-level programming language.", "a scripting language precompiled in the browser.", "a compiled scripting language.", "an object-oriented scripting language."],
-        "correctAnswer": "4",
-    }*/
+        "correctAnswer": "3",
+    }
 ];
 function init() {
 
