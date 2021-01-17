@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Game Over </title>
 </head>
@@ -25,23 +24,45 @@
         </a>
    </header>
     <!-- ======= Header ends here ======= -->
-  
-      <section>
-          <div class="wrapper" style="width: 50rem;">
-                <div style="text-align: center;">
-                    <h2> All done!</h2>
-                    <p>
-                        Correct answers:  <span id="correct"> </span> <br>
-                        Your Final score is: <span id="score1" class="correct"> </span> <br>
-                        
-                        Enter Initials here : 
-                        <input type="text" id="initial" placeholder="">
-                        <button id="submit" class="button"> Submit </button>
-                    </p>
-                    <br>
+
+    <section>
+        <div class="wrapper">
+            <div class="row" id="gameover">
+                <div class="col-sm text-center">
+                    <h2>
+                        Game Over! 
+                    </h2>
                 </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm"> 
+                    <p>
+                        Here's your result -  If you want to submit your score, enter name and click on Submit OR click on Retry to try again. Score submitted 
+                        can be viewed in High score screen. <br> <br>
+                        Correct answers:  <span id="correct" class="font-weight-bold"> 3/10 </span> <br>
+                        Your Final score is: <span id="score" class="font-weight-bold"> 100 </span> <br>
+                    </p>
+                </div>
+            </div>
+            <div class="row text-left"> 
+                <div class="col-sm">
+                    <p>
+                        Enter your Name : <input type="text" id="name" placeholder="">
+                    </p>
+                </div>
+            </div>
         </div>
-      </section>
+        <div class="container">
+            <div class="row"> 
+                <div class="col-sm text-center">
+                    <button class="button" id= "again"> Try again </button>
+                    <button class="button" id= "submit"> Submit </button>
+
+                </div>
+            </div> 
+        </div>
+    </section>
+      
 
       <script type="text/javascript" src="./assets/js/gameOverscript.js"></script>
 

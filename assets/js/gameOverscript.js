@@ -1,12 +1,14 @@
 
 var submitButton = document.getElementById('submit');
-var scoreEl = document.getElementById('score1');
-var nameEl = document.getElementById('initial');
+var tryAgainButton = document.getElementById('again');
 var correctEl = document.getElementById('correct');
-
+var scoreEl = document.getElementById('score');
+var nameEl = document.getElementById('name');
 var totalScore = localStorage.getItem("score");
 var name;
 var scores;
+
+
 
 submitButton.addEventListener("click", function(){
     
@@ -16,15 +18,18 @@ submitButton.addEventListener("click", function(){
     }
 })
 
+tryAgainButton.addEventListener("click", function(){
+    if (validateTryAgain()) {
+        window.location = "quiz.html";
+    }
+})
+
 function init() {
     var correct = localStorage.getItem("score")/10;
-    console.log(correct);
-    
     scoreEl.textContent = localStorage.getItem("score");
     correctEl.textContent = correct + "/10";
 }
 function createScoreObject(name, totalScore) {
-    console.log(name, totalScore);
     
     var object = {
         "name": name, 
@@ -52,5 +57,12 @@ function validateInitial() {
     name = nameEl.value;
     
     return true;
+}
+function validateTryAgain() {
+    var confimr = confirm("Your score will not be saved and new game will start. Are you sure you want to continue? ");
+    if (confimr) {
+        return true;
+    }
+    return false;
 }
 init();

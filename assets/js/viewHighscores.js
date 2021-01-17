@@ -14,15 +14,17 @@
         for (var i=0; i<highscores.length; i++) {
             var item = highscores[i];
     
-            var row = document.createElement('h4');
-             row.innerHTML =  " "+ " "  +  item.name + " - " + item.score;
-             row.setAttribute("id", "row");
+            var row = document.createElement('div');
+            row.setAttribute("class", "row");
+
+            var col = document.createElement('div');
+            col.setAttribute("class", "col-sm text-left");
+            col.setAttribute("id", "row");
+            col.innerHTML = " "+ " "  +  item.name + " - " + item.score;
+            row.appendChild(col);
             highscoreEl.prepend(row);
-
-             }
+        }
     }
-
-   
     
 clearButton.addEventListener("click", function() {
     var clear = confirm("Are you sure you want to clear all scores, if Yes it wont be back again ?");

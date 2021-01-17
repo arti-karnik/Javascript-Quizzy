@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/script.js"></script>
      <title>Web-Development QUIZ </title>
@@ -12,32 +15,55 @@
 <body>
      <!-- ======= Header/ Navbar starts ======= -->
      <header class="header">
-        <h2 class="title">Coding Quiz challenge </h2>
+        <h2 class="title">Web-Development Quiz</h2>
         <a href="index.html">
             Home
         </a>
         <a href="ViewHighScores.html">
             View HighScores
         </a>
-       
-        <a href="#" id="timeRemaining" style="float: right;">
-            Total Time: 180
-        </a>
+        <p id="timeRemaining"> Total time: 100 </p>
    </header>
     <!-- ======= Header ends here ======= -->
 
+     <!-- ======= Section starts ======= -->
       <section>
-          <div class="wrapper" style="width: 50rem;">
+          <div class="wrapper" id="instruction">
                 <div style="text-align: center;">
-                    <h2>Coding Quiz challenge </h2>
-                    <p>
-                        Try to answer the following code-related qusetions within the time limit. Keep in mind that 
-                        incorrect answers will penalize your score/Time by ten seconds
+                    <p id="heading">
+                        Welcome to Web-Development Quiz challenge. This quiz consist of 10 multi-choice questions.
+                        Each correct answer you get 10 marks and incorrect answer will deduct 10 seconds from total time.
+                        Get ready and 
+                        When you are ready click on Start button and your time will start.
                     </p>
-                    <button class="button" id="start"> Start Quiz </button>
+                    <ul id="contents">
+                        <li >
+                            Each correct answer you get 10 marks and incorrect answer will deduct 10 seconds from total time.
+                        </li>
+                        <li>
+                            Get ready and Try to answer the following code-related qusetions within the time limit.
+                        </li>
+                        <li>
+                            Try to answer the following code-related qusetions within the time limit. Keep in mind that 
+                        incorrect answers will penalize your score/Time by ten seconds
+                        </li>
+                        <li>
+                            Try to answer the following code-related qusetions within the time limit.
+                        </li>
+                    </ul>
                 </div>
           </div>
+        
+          <div class="container">
+            <div class="row"> 
+                <div class="col-sm text-center">
+                    <button class="button" id="start"> Start Quiz </button>
+                </div>
+            </div> 
+        </div>
       </section>
+        <!-- ======= Section ends here ======= -->
+
 
     <script type="text/javascript" src="./assets/js/homescript.js"> </script>
 </body>

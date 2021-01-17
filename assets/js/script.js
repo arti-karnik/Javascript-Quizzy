@@ -4,11 +4,12 @@ var timeRemainingEL = document.getElementById('timeRemaining');
 var resultEl = document.getElementById('result');
 var questionNo = document.getElementById('questionNo');
 var warningEl  = document.getElementById('warning');
+var totalTime = 65;
 
 var buzzSound = new Audio('./assets/images/buzz.wav');
 var timer;
 var currentQuestion = 0;
-var seconds= 20;
+var seconds= 120;
 var score = 0;
 
 var questionList = [
@@ -66,14 +67,16 @@ var questionList = [
 function init() {
     
     createQuestionElement();
-    startTimer();
+     startTimer();
 }
 function startTimer() {
     score = 0;
+    seconds = totalTime;
     
     timer = setInterval(function() {
         seconds -= 1;
-        timeRemainingEL.innerHTML =  "Time remaining: " + seconds;
+        timeRemainingEL.innerHTML =  "Time left: " + getMinutes(seconds);
+
         if (seconds <= 0) {
             warningEl.innerHTML = "Time-up!!! It's Game Over"
 
@@ -83,11 +86,28 @@ function startTimer() {
                 gameOver();
             }, 3000);
         }
-        if (seconds <= 10 && seconds > 0) {
-            warningEl.hidden = false;
-            warningEl.innerHTML = "ALERT: Time is about to finish"
+        if (seconds <= 15 && seconds > 0) {
+            showWarning();
         }
     }, 1000);
+}
+function getMinutes(second) {
+    var m = Math.floor(second % 3600 / 60);
+    var s = Math.floor(second % 3600 % 60);
+
+    var mDisplay = m > 0 ? ("0" + m + ":") : "00:";
+    var sDisplay = s < 10 ? ("0" + s) : s;
+
+    return  mDisplay + sDisplay;
+}
+function showWarning()
+{
+    console.log("in warning");
+    warningEl.style.visibility = "visible" ;
+    setInterval(function() {
+        warningEl.style.visibility = (warningEl.style.visibility == 'hidden' ? '' : 'hidden');
+     }, 500)
+
 }
 function createQuestionElement() {
     
@@ -131,7 +151,7 @@ function createRadioButton(text, value) {
 }
 function clickAnswer(userAnswer, correctAnswer) {
     
-    resultEl.style.display = "block";
+    resultEl.hidden = false;
     if (userAnswer == correctAnswer) {
         rightAnswer();
     } else {
@@ -156,7 +176,7 @@ function updateQuestionDetails(number) {
         }
 }
 function updateQuestionNo() {
-    resultEl.style.display = "none";
+    resultEl.hidden = true;
     currentQuestion = currentQuestion + 1;
     
     if (currentQuestion < questionList.length) {

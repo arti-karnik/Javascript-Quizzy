@@ -10,16 +10,26 @@ section {
 .wrapper {
   padding: 30px 40px;
   margin: 0px auto;
-  border-width: 5px;
+  margin-top: 20px;
+  border-width: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   width: 50rem;
-}
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  height: auto;
 
+}
+.wrapper h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.wrapper p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  text-align: left;
+}
 header {
-  
-    background-color: #333;;
     background-color: #4e3172;
     overflow: hidden;
 }
@@ -29,6 +39,8 @@ header {
     font-size: 20px;
     height: 40px;
     color: white;
+    text-align: center;
+    margin-top: 20px;
 }
 
 
@@ -46,7 +58,7 @@ header {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
-  display: none;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -60,10 +72,9 @@ header {
 } 
 .header .title {
   color: white;
-  font-family: sans-serif;
-  font-weight: bold;
   text-align: center;
   padding-top: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 
@@ -99,12 +110,13 @@ header {
 
 #row {
   text-align: left;
-  border-bottom: 1px solid lightgray;
-  color: black;
+  border-bottom: 2px solid lightgray;
   font-size: 18px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: #efe7f9;
   padding: 10px;
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #choice-label {
   padding-left: 10px;
@@ -113,19 +125,55 @@ header {
   font-weight: bold;
 }
 header p {
-  color: wheat;
-  font-size: 20px;
+  color: white;
+  font-size: 22px;
   font-weight: bold;
   float: right;
-  padding-right: 10px;
+  padding-right: 20px;
   padding-bottom: 10px;
   padding-top: 15px;
   padding-bottom: 13px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 #warning {
   color: red;
   font-weight: bold;
-  margin-top: 10px;
-  margin-bottom:20px;
   text-align: center;
+  margin: -20px;
+  font-size: 20px;
+  visibility: hidden;
+}
+
+ul {
+  color: rebeccapurple;
+  text-align: left;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  list-style-type: disc;
+  margin-left: 0px;
+}
+
+.startbutton-container {
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+}
+
+#questionNo {
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#result .text {
+  margin-top: 10px;
+}
+#questionTitle {
+  margin-top: 5px;
+}
+
+#gameover .title {    
+    color: black;
+    font-weight: bold;
+
 }
