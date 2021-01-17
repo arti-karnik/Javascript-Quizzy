@@ -6,7 +6,7 @@ var questionNo = document.getElementById('questionNo');
 var warningEl  = document.getElementById('warning');
 var totalTime = 65;
 
-var buzzSound = new Audio('./assets/images/buzz.wav');
+var buzzSound = new Audio('./assets/images/buzz.mp3');
 var timer;
 var currentQuestion = 0;
 var seconds= 120;
