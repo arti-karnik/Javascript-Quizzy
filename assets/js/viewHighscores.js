@@ -9,7 +9,9 @@
 
     function showScores() {
         var highscores = JSON.parse(localStorage.getItem("highscores"));
-        if (!highscores) return [];
+        if (!highscores) { 
+            disableClearButton(true);
+            return [] };
 
         for (var i=0; i<highscores.length; i++) {
             var item = highscores[i];
@@ -24,6 +26,8 @@
             row.appendChild(col);
             highscoreEl.prepend(row);
         }
+        disableClearButton(false);
+
     }
     
 clearButton.addEventListener("click", function() {
@@ -41,11 +45,16 @@ function removeAllRow() {
     while (highscoreEl.firstChild) {
         highscoreEl.removeChild(highscoreEl.firstChild);
     }
+    disableClearButton(true);
     alert("Scores are cleared!");
 }
     function clearScores() {
         removeAllRow("row-highscore");
         localStorage.clear("highscores");
+    }
+
+    function disableClearButton(Isdisabled) {
+      clearButton.disabled = Isdisabled;
     }
 
 init();
