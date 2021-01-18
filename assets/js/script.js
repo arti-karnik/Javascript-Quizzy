@@ -4,13 +4,14 @@ var timeRemainingEL = document.getElementById('timeRemaining');
 var resultEl = document.getElementById('result');
 var questionNo = document.getElementById('questionNo');
 var warningEl  = document.getElementById('warning');
-var totalTime = 65;
-
 var buzzSound = new Audio('./assets/images/buzz.mp3');
 var timer;
 var currentQuestion = 0;
+var totalTime = 65;
 var seconds= 120;
 var score = 0;
+var minus = 5;
+var warningseconds = 60;
 
 var questionList = [
     {
@@ -75,7 +76,8 @@ function startTimer() {
     
     timer = setInterval(function() {
         seconds -= 1;
-        timeRemainingEL.innerHTML =  "Time left: " + getMinutes(seconds);
+
+        timeRemainingEL.innerHTML =  "Time Left : " + getMinutes(seconds);
 
         if (seconds <= 0) {
             warningEl.innerHTML = "Time-up!!! It's Game Over"
@@ -86,8 +88,8 @@ function startTimer() {
                 gameOver();
             }, 3000);
         }
-        if (seconds <= 15 && seconds > 0) {
-            showWarning();
+        if (seconds <= warningseconds && seconds > 0) {
+             showWarning();
         }
     }, 1000);
 }
@@ -102,12 +104,11 @@ function getMinutes(second) {
 }
 function showWarning()
 {
-    console.log("in warning");
-    warningEl.style.visibility = "visible" ;
-    setInterval(function() {
-        warningEl.style.visibility = (warningEl.style.visibility == 'hidden' ? '' : 'hidden');
-     }, 500)
-
+    if (warningEl.style.visibility == "hidden") {
+        warningEl.style.visibility = "visible";
+    } else {
+        warningEl.style.visibility = "hidden";
+    }
 }
 function createQuestionElement() {
     
@@ -140,18 +141,21 @@ function createRadioButton(text, value) {
     radio.type = "radio";
     radio.value = value;
     radio.checked = false;
+    radio.name = "option";
+    radio.setAttribute("style", "height:15px; width:15px;");
     radio.setAttribute("id", "choice-button");
     radio.addEventListener('change', function() {
         clickAnswer(this.value, questionList[currentQuestion].correctAnswer);
     });
-    
+
     mydiv.appendChild(radio);
     mydiv.appendChild(label);
     return mydiv;
 }
 function clickAnswer(userAnswer, correctAnswer) {
-    
     resultEl.hidden = false;
+    makeButtons(true);
+
     if (userAnswer == correctAnswer) {
         rightAnswer();
     } else {
@@ -161,8 +165,15 @@ function clickAnswer(userAnswer, correctAnswer) {
         updateQuestionNo();
     }, 1000);
 }
+function makeButtons(Isdisabled) {
+    var choicebutton = document.querySelectorAll("#choice-button"); 
+    for (i=0; i<choicebutton.length; i++) {
+        console.log(Isdisabled);
+        choicebutton[i].disabled =  Isdisabled;
+    }
+}
 function updateQuestionDetails(number) {
-    questionNo.textContent = "Question " + (currentQuestion + 1) + " of " + questionList.length;
+        questionNo.textContent = "Question " + (currentQuestion + 1) + " of " + questionList.length;
         
         var question = document.getElementById('questionTitle')
         question.textContent = questionList[currentQuestion].question;
@@ -178,7 +189,8 @@ function updateQuestionDetails(number) {
 function updateQuestionNo() {
     resultEl.hidden = true;
     currentQuestion = currentQuestion + 1;
-    
+        makeButtons(false);
+
     if (currentQuestion < questionList.length) {
         updateQuestionDetails(currentQuestion);
     } else {
@@ -187,11 +199,11 @@ function updateQuestionNo() {
 }
 function rightAnswer() {
     score = score + 10;
-    resultEl.innerHTML = "Correct!";
+    resultEl.textContent = "Correct!";
 }
 function wrongAnswer() {
     buzzSound.play();
-    seconds = seconds - 5;
+    seconds = seconds - minus + 1;
     if (seconds <= 0) {
         gameOver();
     }

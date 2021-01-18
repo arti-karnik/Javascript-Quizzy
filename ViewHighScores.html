@@ -5,38 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
     <link rel="stylesheet" href="./assets/css/style.css" />
-     <title>Web-Development QUIZ </title>
+     <title> View High-Scores</title>
 </head>
 <body>
       <!-- ======= Header/ Navbar starts ======= -->
-     <header class="header">
-        <h2 class="title">Coding Quiz challenge </h2>
-        <a href="index.html">
-            Home
-        </a>
-        <a href="ViewHighScores.html">
-            View HighScores
-        </a>
-       
-        <a href="#" id="timeRemaining" style="float: right;">
-            Total Time: 180
-        </a>
-   </header>
+      <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark headerbg" id="navbar-solid" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">View High scores </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <h1 id="title"> Web-Development Quiz
+                    </h1>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <p id="timeRemaining"> <span class="time"> Total time: 02:00 </p>
+                    </a>
+                </li>
+            </ul>
+            </div>
+          </nav>
+     </header>
     <!-- ======= Header ends here ======= -->
 
-      <section>
-          <div class="wrapper" style="width: 50rem;">
-                <div style="text-align: center;">
-                    <h2>High Scores </h2>
-                    <div id="row-highscore">
-                    </div>
-                    
-                    <button class="button" id="goBack"> Go Back </button>
-                    <button class="button" id="clear"> Clear HighScores  </button>
-                </div>
+      <section class="section">
+          <div class="wrapper">
+            <h2 id="highScore-title" class="text-center"> High Scores </h2>
+              <div class="container" id="row-highscore">
+              </div>
+               
           </div>
+          <div style="text-align: center; text-align: center;">
+            <button class="button" id="goBack"> Play again </button>
+            <button class="button" id="clear"> Clear HighScores  </button>
+        </div>
       </section>
 
     <script type="text/javascript" src="./assets/js/viewHighscores.js"> </script>

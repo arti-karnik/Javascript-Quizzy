@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
-     <title>Web-Development QUIZ </title>
+     <title> Home </title>
 </head>
 <body>
-     <!-- ======= Header/ Navbar starts ======= -->
-     <header class="header">
-        <h2 class="title">Web-Development Quiz</h2>
-        <a href="index.html">
-            Home
-        </a>
-        <a href="ViewHighScores.html">
-            View HighScores
-        </a>
-        <p id="timeRemaining"> Total time: 100 </p>
-   </header>
+     <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark headerbg" id="navbar-solid" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ViewHighScores.html">View High scores </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <h1 id="title"> Web-Development Quiz
+                    </h1>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <p id="timeRemaining"> <span class="time"> Total Time: 02:00 </p>
+                    </a>
+                </li>
+            </ul>
+            </div>
+          </nav>
+     </header>
     <!-- ======= Header ends here ======= -->
 
      <!-- ======= Section starts ======= -->
-      <section>
+      <section class="section">
           <div class="wrapper" id="instruction">
           </div>
-        
           <div class="container">
             <div class="row"> 
                 <div class="col-sm text-center">
@@ -40,6 +56,18 @@
       </section>
         <!-- ======= Section ends here ======= -->
 
-    <script type="text/javascript" src="./assets/js/homescript.js"> </script>
+        <!-- ======= Footer starts =======     -->
+    <footer class="footer">
+        <div class="container">
+            <span class="footer-text">
+                
+            </span>
+            <p> © Copyright Arti Karnik 2021. All Rights Reserved.<br> Designed & Developed by Arti Karnik</p>
+        </div>
+    </footer>
+    <!-- ======= Footer ends here ======= -->
+
+    <script type="text/javascript" src="./assets/js/homescript.js">
+    </script>
 </body>
 </html>

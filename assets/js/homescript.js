@@ -10,9 +10,10 @@ var instruction = [
 ];
 
 startButton.addEventListener("click", function(){
-    console.log("click");
-    window.location = "quiz.html";
+    console.log("first function ");
+     window.location = "quiz.html";
 })
+
 
 function createInstructionElement() {
     var divEl = document.createElement("div");

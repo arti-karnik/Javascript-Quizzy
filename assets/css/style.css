@@ -3,14 +3,38 @@ body {
   font-family: sans-serif;
   background-color: #efefef;
 }
-section {
+
+
+.section {
   padding-top: 20px;
 }
-
 .wrapper {
   padding: 30px 40px;
   margin: 0px auto;
-  margin-top: 20px;
+  border-width: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 5px 5px 5px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  width: 50rem;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  height: auto;
+  z-index: 0;
+  margin-top: 30px;
+}
+.wrapper h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.wrapper p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: left;
+}
+.wrapper #Question {
+  margin-top: -10px;
+}
+.container-quiz {
+  padding: 30px 40px;
+  margin: 0px auto;
   border-width: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
@@ -19,28 +43,10 @@ section {
   font-weight: 500;
   font-family: 'Raleway', sans-serif;
   height: auto;
-
-}
-.wrapper h2 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.wrapper p {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-  text-align: left;
 }
 header {
-    background-color: #4e3172;
     overflow: hidden;
-}
-
-.button {
-    background-color: #482c68;
-    font-size: 20px;
-    height: 40px;
-    color: white;
-    text-align: center;
-    margin-top: 20px;
+   background-color: #482c68;
 }
 .button:disabled,
 .button[disabled]{
@@ -48,9 +54,6 @@ header {
   background-color: #cccccc;
   color: #666666;
 }
-
-
-
 .choice {
   padding-top: 10px;
   text-align: left;
@@ -66,54 +69,38 @@ header {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .header {
    overflow: hidden;
-  height: 125px;
   background-color: #4e3172;
 }
 #view-highscores {
   float: left;
   color: #f2f2f2;
 } 
-.header .title {
-  color: white;
-  text-align: center;
-  padding-top: 25px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
 
-
-.header a {
+.navbar a {
   float: left;
   color: #f2f2f2;
-  padding: 14px 16px;
-  padding-top: 15px;
-  padding-bottom: 13px;
   font-size: 17px;
   text-align: right;
   text-decoration: none;
 }
 
-.header a:hover {
+.navbar a:hover {
   color: white;
   border-radius: 25px;
   border-color: black;
   background-color: rgb(156, 97, 151);
+
 }
-.header a.active {
-  background-color: #1e5294;
+.navbar-nav > .active {
+  background-color: rgb(156, 97, 151);
   color : white;
   border-radius: 25px;
-  border: 2px solid #1e5294;
-}
-.float-left {
-  float: left;
-}
-.float-right {
-  float: right;
+  border: 2px solid #010002;
+
 }
 
 #row {
@@ -132,24 +119,33 @@ header {
 .score {
   font-weight: bold;
 }
-header p {
-  color: white;
-  font-size: 22px;
+#timeRemaining {
+  color : black;
   font-weight: bold;
-  float: right;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-top: 15px;
-  padding-bottom: 13px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 2px solid #1e5294;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 1px;
+  color : whitesmoke;
+  border: 2px solid #010002;
+  background-color: #1e5294;
+  padding:10px;
+  margin-top: 5px;
+  border-radius: 20px;
+  font-size: 18px;
 }
 #warning {
   color: red;
   font-weight: bold;
   text-align: center;
-  margin: -20px;
   font-size: 20px;
+  width: 100%;
+  margin-top: 10px;
   visibility: hidden;
+
+}
+.warning-text{
+  padding-top: 20px;
+  margin-top: 30px;
 }
 
 ul {
@@ -172,6 +168,10 @@ ul {
   font-weight: bold;
   margin-top: 10px;
 }
+.headerbg {
+  background-color: #482c68;
+
+}
 
 #result .text {
   margin-top: 10px;
@@ -183,5 +183,68 @@ ul {
 #gameover .title {    
     color: black;
     font-weight: bold;
-
 }
+.nav-link {
+  color: white;
+  font-size: 17px;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+#title {
+  text-align:center;
+  color: whitesmoke;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  font: x-large;
+}
+
+button {
+  background-color: #482c68;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 8px;
+  border-width: 2px;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+  margin-top: 5px;
+}
+
+
+
+.title1 {
+  margin-left: auto;
+  width: 100%;
+  text-align: center;
+}
+.navbar-brand {
+  text-align: center;
+}
+.nav-link title {
+  color: whitesmoke;
+}
+.time {
+  padding-top: 20px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  color: gray;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 15px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #252729;
+ }

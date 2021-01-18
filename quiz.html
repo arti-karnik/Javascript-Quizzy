@@ -6,48 +6,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Web-Development QUIZ </title>
+    <title>Play QUIZ </title>
 </head>
 <body>
     <!-- ======= Header/ Navbar starts ======= -->
-     <header class="header">
-        <h2 class="title">Coding Quiz challenge </h2>
-        <a href="index.html">
-            Home
-        </a>
-        <a href="ViewHighScores.html">
-            View HighScores
-        </a>
-        <p id="timeRemaining"> Total time: 120 </p>
-   </header>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark headerbg" id="navbar-solid" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ViewHighScores.html">View High scores </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <h1 id="title"> Web-Development Quiz
+                    </h1>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <p id="timeRemaining"> <span class="time"> Total Time: 02:00 </p>
+                    </a>
+                </li>
+            </ul>
+            </div>
+          </nav>
+     </header>
     <!-- ======= Header ends here ======= -->
-  
-    
+
   <section>
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-sm text-center" id="warning">
-                <span > ALERT: Time is about to finish </span>
+      <div class="container">
+        <h5 class="text-center" id="warning">  <span class="warning-text"> ALERT: Time is about to finish </span> </h5>
+        <div class="container-quiz ">
+            <div class="row">
+                <div class="col-sm" id="questionNo">
+                   <h4>
+                        Question 1 of 10
+                    </h4>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-sm" id= "questionlist">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm" id="result" hidden=true>
+                    <span class="text-left"> Correct</span>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm" id="questionNo">
-               <h4>
-                    Question 1 of 10
-                </h4>
-            </div>
-        </div>
-        <div class="row" >
-            <div class="col-sm" id= "questionlist">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm" id="result" hidden=true>
-                <span class="text">Correct</span>
-            </div>
-        </div>
-    </div>
+      
+      </div>
+   
+   
+
     </section>
+
+   
     
     <script type="text/javascript" src="./assets/js/script.js"> </script>
 </body>
