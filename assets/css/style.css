@@ -38,7 +38,7 @@ header {
   border-radius: 25px;
   border: 2px solid #010002;
 }
-.navbar-nav a:hover {
+.navbar-nav > a:hover {
   color : white;
 }
 .navbar-nav > li{

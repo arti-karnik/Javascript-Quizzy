@@ -73,22 +73,6 @@ var questionList = [
         "correctAnswer": "2",
     }
 ];
-
-function ViewHighScoreButtonClicked() {
-    var goToHighscore = confirm("Are you sure you want to go to View High Score page? If yes, your game won't be saved!");
-
-    if (goToHighscore) {
-        window.location.href = "ViewHighScores.html";
-    }
-}
-
-function homeButtonClicked() {
-    var goToHome = confirm("Are you sure you want to go to Home page? If yes, your game won't be saved!");
-
-    if (goToHome) {
-        window.location.href = "index.html";
-    }}
-
 /*--------------------------------------------------------------
 # Initialize to be called when page is loaded
 --------------------------------------------------------------*/
@@ -100,7 +84,6 @@ function init() {
 /*--------------------------------------------------------------
 # Initialize to be called to start the Game
 --------------------------------------------------------------*/
-
 function startGame() {
     score = 0;
     seconds = totalTime;
@@ -193,7 +176,6 @@ function getMinutes(time) {
 Enable - By default for each question, choice radio button is enabled.
 Disable - When answer is selected, disable radio buttons and user should not be able to change the answer 
 --------------------------------------------------------------*/
-
 function makeButtons(Isdisabled) {
     var choicebutton = document.querySelectorAll("#choice-button"); 
     for (i=0; i<choicebutton.length; i++) {
@@ -204,7 +186,6 @@ function makeButtons(Isdisabled) {
 /*--------------------------------------------------------------
 # Method called when answer is selected by the user
 --------------------------------------------------------------*/
-
 function clickAnswer(userAnswer, correctAnswer) {
     resultEl.hidden = false;
     makeButtons(true);
@@ -221,7 +202,6 @@ function clickAnswer(userAnswer, correctAnswer) {
 /*--------------------------------------------------------------
 # Method called when answer is correct
 --------------------------------------------------------------*/
-
 function rightAnswer() {
     score = score + 10;
     resultEl.textContent = "Correct!";
@@ -242,7 +222,6 @@ function wrongAnswer() {
 /*--------------------------------------------------------------
 # Method to update Question number ie Question 1 of 10 
 --------------------------------------------------------------*/
-
 function changeQuestionNo() {
    
     currentQuestion = currentQuestion + 1;
@@ -261,7 +240,6 @@ function changeQuestionNo() {
 # Method to update question details based on current Question No
 number: Question number to be added
 --------------------------------------------------------------*/
-
 function updateQuestionDetails(number) {
     var question = document.getElementById('question-title');
     var choiceLabel = document.querySelectorAll("#choice-label"); 
@@ -285,7 +263,6 @@ function showWarning()
 /*--------------------------------------------------------------
 # Method called when game is Over
 --------------------------------------------------------------*/
-
 function gameOver() {
     warningEl.style.visibility = "visible";
     
@@ -294,5 +271,25 @@ function gameOver() {
        window.location.href = "gameOver.html";
         }, 2000);
 }
+/*--------------------------------------------------------------
+# Method to get confirmation from user to go to View Score page when quiz is on.
+--------------------------------------------------------------*/
+function ViewHighScoreButtonClicked() {
+    var goToHighscore = confirm("Are you sure you want to go to View High Score page? If yes, your game won't be saved!");
+
+    if (goToHighscore) {
+        window.location.href = "ViewHighScores.html";
+    }
+}
+/*--------------------------------------------------------------
+# Method to get confirmation from user to go to Home Page when quiz is on.
+--------------------------------------------------------------*/
+function homeButtonClicked() {
+    var goToHome = confirm("Are you sure you want to go to Home page? If yes, your game won't be saved!");
+
+    if (goToHome) {
+        window.location.href = "index.html";
+    }}
+
 
 init();
