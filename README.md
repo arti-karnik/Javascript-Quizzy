@@ -1,7 +1,7 @@
 # Javascript-Quizzy
 
 <strong> Project Summary: </strong> <br>
-This is timed quiz on JavaScript fundamentals that stores high scores. It have multi-choice questions to be answered in given time-limit 
+Quiz on JavaScript fundamentals that stores high scores. It have multi-choice questions to be answered in given time-limit.
 
 
 <div align="left">
@@ -19,13 +19,12 @@ This is timed quiz on JavaScript fundamentals that stores high scores. It have m
 Apply learnings from Javascript with HTML, CSS & Bootstrap to build a multi-page Quiz application  <br>
 
 <strong> Description: </strong> <br>
- This application is a 10 question multiple choice quiz on the topic of web development. User has 2 minutes in which to try & answer all questions. At the end of the quiz, user have option to submit the score. <br>
+ This application is a 10 question multiple choice quiz on the topic of web development. User has 2 minutes in which to try & answer all questions. At the end of the quiz, user have option to submit the score. Used HTML, CSS & Javascript and Bootstrap for responsiveness. <br>
  
-<i>Instruction: </i> <br>
-• For every correct answer, 10 points are awarded. For every incorrect answer, a buzzer sounds & 5 seconds are deducted from the remaining time. In both cases, either 'Correct' or 'Wrong' is displayed once an option choice is selected. Users cannot change the answer choice once selected.
+<strong>Instruction: <strong> <br>
+• For every correct answer, 10 points are awarded. For every incorrect answer, a buzzer sounds & 5 seconds are deducted from the remaining time. In both cases, either 'Correct' or 'Wrong', is displayed once an option choice is selected. Users cannot change the answer choice once selected in the instance.
 
-• Countdown timer of the remaining time is shown to the user in the
-top right corner of the page.
+• Countdown timer of the remaining time is shown to the user in the top right corner of the page.
 
 • As quiz time elapses, when the last 10 seconds remain, an alert message is shown to the user.
 
