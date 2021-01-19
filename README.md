@@ -5,13 +5,13 @@ This is timed quiz on JavaScript fundamentals that stores high scores. It have m
 
 
 <div align="left">
-      <img src="./assets/images/screenshots/ss1.png">
-       <img src="./assets/images/screenshots/ss2.png">
-       s<img src="./assets/images/screenshots/ss3.png">
+      <img src="./assets/images/screenshots/SS1.png">
+       <img src="./assets/images/screenshots/SS2.png">
+       s<img src="./assets/images/screenshots/SS3.png">
   <br>
-      <img src="./assets/images/screenshots/ss4.png">
+      <img src="./assets/images/screenshots/SS4.png">
   <br>
-      <img src="./assets/images/screenshots/ss5.png">
+      <img src="./assets/images/screenshots/SS5.png">
 </div>
 <br>
 <strong> Description: </strong> <br>
