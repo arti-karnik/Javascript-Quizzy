@@ -3,53 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ======= Body ends ======= -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- ======= Body ends ======= -->
      <title> View High-Scores</title>
 </head>
 <body>
       <!-- ======= Header/ Navbar starts ======= -->
       <header>
-        <nav class="navbar navbar-expand-lg sticky-top navbar-dark headerbg" id="navbar-solid" role="navigation">
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">View High scores </a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav mx-auto text-center">
-                <li class="nav-item">
-                    <h1 id="title"> Web-Development Quiz
-                    </h1>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <p id="timeRemaining"> <span class="time"> Total time: 02:00 </p>
-                    </a>
-                </li>
-            </ul>
-            </div>
-          </nav>
-     </header>
+       <nav class="navbar navbar-expand-lg sticky-top" role="navigation">
+           <ul class="nav navbar-nav">
+               <li class="nav-item">
+                   <a class="nav-link" href="index.html">Home</a>
+               </li>
+               <li class="nav-item active">
+                   <a class="nav-link" href="#">View High Scores </a>
+               </li>
+           </ul>
+           <ul class="nav navbar-nav mx-auto text-center">
+               <li class="nav-item">
+                   <h1 id="nav-title">  <span class="d-none d-md-inline" id="nav-title"> Web-Development Quiz </span>
+                   </h1>
+               </li>
+           </ul>
+           <ul class="nav navbar-nav">
+               <li class="nav-item">
+                   <a class="nav-link" href="#" id="timeRemaining"> Total Time: 02:00 </a>
+               </li>
+           </ul>
+        </nav>
+      </header>
     <!-- ======= Header ends here ======= -->
 
+    <!-- ======= Body ends ======= -->
       <section class="section">
-          <div class="wrapper">
-            <h2 id="highScore-title" class="text-center"> High Scores </h2>
-              <div class="container" id="row-highscore">
+          <div class="container">
+            <h2 id="highScore-title"> High Scores </h2>
+              <div id="row-highscore">
               </div>
                
           </div>
           <div style="text-align: center; text-align: center;">
-            <button class="button" id="goBack"> Play again </button>
-            <button class="button" id="clear"> Clear HighScores  </button>
+            <button class="button" id="goBack"> Play Again </button>
+            <button class="button" id="clear"> Clear High Scores  </button>
         </div>
       </section>
-
-    <script type="text/javascript" src="./assets/js/viewHighscores.js"> </script>
+    <!-- ======= Body ends ======= -->
+    
+    <!-- ======= Body ends ======= -->
+    <script type="text/javascript" src="./assets/js/scriptHighScores.js"> </script>
 </body>
+<!-- ======= Body ends ======= -->
+
+<!-- ======= Footer starts =======     -->
+<footer class="footer">
+    <p> © Copyright Arti Karnik 2021. All Rights Reserved.<br> Designed & Developed by Arti Karnik</p>            
+    </div>
+</footer>
+<!-- ======= Footer ends here ======= -->
 </html>

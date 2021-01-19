@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ======= Head starts ======= -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ======= Bootstrap files ======= -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- ======= CSS files ======= -->
     <link rel="stylesheet" href="./assets/css/style.css"/>
+
+    <!-- ======= Title files ======= -->
     <title>Game Over </title>
 </head>
+<!-- ======= Head ends ======= -->
+
+<!-- ======= Body starts ======= -->
 <body>
-      <!-- ======= Header/ Navbar starts ======= -->
-      <header>
-        <nav class="navbar navbar-expand-lg sticky-top navbar-dark headerbg" id="navbar-solid" role="navigation">
+    <!-- ======= Header/ Navbar starts ======= -->
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top" role="navigation">
             <ul class="nav navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ViewHighScores.html">View High scores </a>
+                    <a class="nav-link active" href="ViewHighScores.html">View High Scores </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav mx-auto text-center">
                 <li class="nav-item">
-                    <h1 id="title"> Web-Development Quiz
+                    <h1 id="nav-title">  <span class="d-none d-md-inline" id="nav-title"> Web-Development Quiz </span>
                     </h1>
                 </li>
             </ul>
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <p id="timeRemaining"> <span class="time"> Total time: 120 </p>
-                    </a>
+                    <a class="nav-link" href="#" id="timeRemaining"> Total Time: 02:00 </a>
                 </li>
             </ul>
-            </div>
-          </nav>
-     </header>
+        </nav>
+    </header>
     <!-- ======= Header ends here ======= -->
 
+    <!-- ======= Section starts ======= -->
     <section class="section">
-        <div class="wrapper">
+        <div class="container">
             <div class="row" id="gameover">
                 <div class="col-sm text-center">
                     <h2>
@@ -49,10 +57,13 @@
             <div class="row text-center">
                 <div class="col-sm"> 
                     <p>
-                        Here's your result -  If you want to submit your score, enter name and click on Submit OR click on Retry to try again. Score submitted 
-                        can be viewed in High score screen. <br> <br>
-                        Correct answers:  <span id="correct" class="font-weight-bold"> 3/10 </span> <br>
-                        Your Final score is: <span id="score" class="font-weight-bold"> 100 </span> <br>
+                        <strong>  Here's your result: </strong> <br>  
+                        Correct answers:  <span id="correct" class="font-weight-bold"> </span> <br>
+                        Your Final score is: <span id="score" class="font-weight-bold"></span> <br> <br>
+                        
+                        To record your score, enter your Name and Submit. If you want to retry click 'Try Again'.
+                        Score submitted can be viewed on the High score page.
+                        <br> 
                     </p>
                 </div>
             </div>
@@ -64,19 +75,28 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container-button">
             <div class="row"> 
                 <div class="col-sm text-center">
-                    <button class="button" id= "again"> Try again </button>
+                    <button class="button" id= "again"> Try Again </button>
                     <button class="button" id= "submit"> Submit </button>
-
                 </div>
             </div> 
         </div>
     </section>
-      
+    <!-- ======= Section ends ======= -->
 
-      <script type="text/javascript" src="./assets/js/gameOverscript.js"></script>
+    <!-- ======= JS file ======= -->
+    <script type="text/javascript" src="./assets/js/scriptGameOver.js"></script>
 
 </body>
+<!-- ======= Body ends ======= -->
+
+<!-- ======= Footer starts =======     -->
+<footer class="footer">
+    <p> © Copyright Arti Karnik 2021. All Rights Reserved.<br> Designed & Developed by Arti Karnik</p>            
+</div>
+</footer>
+<!-- ======= Footer ends ======= -->
+
 </html>

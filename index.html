@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- ======= Body ends ======= -->
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+    <!-- ======= Bootstrap files ======= -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+   
+    <!-- ======= Google Fonts ======= -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    
+    <!-- ======= CSS file ======= -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- ======= Title ======= -->
      <title> Home </title>
 </head>
+<!-- ======= Head  ends ======= -->
+
+<!-- ======= Body starts ======= -->
 <body>
+    <!-- ======= Header/Nav starts ======= -->
      <header>
-        <nav class="navbar navbar-expand-lg sticky-top navbar-dark headerbg" id="navbar-solid" role="navigation">
+        <nav class="navbar navbar-expand-lg sticky-top" role="navigation">
             <ul class="nav navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ViewHighScores.html">View High scores </a>
+                    <a class="nav-link" href="ViewHighScores.html">View High Scores </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav mx-auto text-center">
                 <li class="nav-item">
-                    <h1 id="title"> Web-Development Quiz
+                    <h1 id="nav-title">  <span class="d-none d-md-inline" id="nav-title"> Web-Development Quiz </span>
                     </h1>
                 </li>
             </ul>
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <p id="timeRemaining"> <span class="time"> Total Time: 02:00 </p>
-                    </a>
+                    <a class="nav-link" href="#" id="timeRemaining"> Total Time: 02:00 </a>
                 </li>
             </ul>
-            </div>
           </nav>
      </header>
     <!-- ======= Header ends here ======= -->
 
      <!-- ======= Section starts ======= -->
       <section class="section">
-          <div class="wrapper" id="instruction">
+          <div class="container" id="instruction">
+            <div class="row">
+                <div class="col-sm text-left">
+                    <h4>
+                        Welcome to Web-development Quiz! 
+                    </h4>
+                </div>
+            </div>
           </div>
-          <div class="container">
+          <div class="container-button">
             <div class="row"> 
                 <div class="col-sm text-center">
                     <button class="button" id="start"> Start Quiz </button>
@@ -54,20 +70,21 @@
             </div> 
         </div>
       </section>
-        <!-- ======= Section ends here ======= -->
+     <!-- ======= Section ends here ======= -->
 
-        <!-- ======= Footer starts =======     -->
+    <!-- ======= Footer starts =======     -->
     <footer class="footer">
-        <div class="container">
-            <span class="footer-text">
-                
-            </span>
-            <p> © Copyright Arti Karnik 2021. All Rights Reserved.<br> Designed & Developed by Arti Karnik</p>
+        <p> © Copyright Arti Karnik 2021. All Rights Reserved.<br> Designed & Developed by Arti Karnik</p>            
         </div>
     </footer>
     <!-- ======= Footer ends here ======= -->
 
-    <script type="text/javascript" src="./assets/js/homescript.js">
+    <!-- ======= JS file  ======= -->
+    <script type="text/javascript" src="./assets/js/scriptHome.js">
     </script>
+    <!-- ======= JS ends ======= -->
+
 </body>
+<!-- ======= Body ends ======= -->
+
 </html>
