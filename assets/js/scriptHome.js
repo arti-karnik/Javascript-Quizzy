@@ -5,12 +5,13 @@
 var startButton = document.getElementById('start');
 var instructionEl = document.getElementById('instruction');
 
-var heading = "This quiz consists of 10 multi-choice questions on Web-development and you have 2 minutes to complete it. Please read below instructions to play the quiz & when you are ready click 'Start quiz' to begin and your time will start.   <br>"
+var heading = "Please read below instructions to play the quiz & when you are ready click 'Start quiz' to begin and your time will start.   <br>"
 var instruction = [
+    "This quiz consists of 10 multi-choice questions and you have 2 minutes to complete it.",
     "For every correct answer, 10 points are awarded.",
-    "For every incorrect answer, a buzzer will sound and 5 seconds will be deducted from the remainining time",
+    "For every incorrect answer, a buzzer will sound and 5 seconds will be deducted from the remainining time.",
     "Correct/Wrong will be displayed for each question once an choice is selected and it cannot be changed.",
-    "Countdown timer is shown on top-right side of page, when last 10 seconds remain alert message is shown to the user",
+    "Countdown timer is shown on top-right side of page, when last 10 seconds remain alert message is shown to the user.",
     "Try to answer the following code-related questions within the time limit."
 ];
 /*--------------------------------------------------------------
@@ -48,7 +49,7 @@ function createTitleElement() {
 function createHeadingElement() {
     var rowEl = document.createElement("div");
     rowEl.setAttribute("class", "row");
-
+    
     var colEl = document.createElement("div");
     colEl.setAttribute("class", "col-sm");
     colEl.innerHTML = heading;

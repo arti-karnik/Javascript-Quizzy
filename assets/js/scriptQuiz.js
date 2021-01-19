@@ -74,6 +74,21 @@ var questionList = [
     }
 ];
 
+function ViewHighScoreButtonClicked() {
+    var goToHighscore = confirm("Are you sure you want to go to View High Score page? If yes, your game won't be saved!");
+
+    if (goToHighscore) {
+        window.location.href = "ViewHighScores.html";
+    }
+}
+
+function homeButtonClicked() {
+    var goToHome = confirm("Are you sure you want to go to Home page? If yes, your game won't be saved!");
+
+    if (goToHome) {
+        window.location.href = "index.html";
+    }}
+
 /*--------------------------------------------------------------
 # Initialize to be called when page is loaded
 --------------------------------------------------------------*/
