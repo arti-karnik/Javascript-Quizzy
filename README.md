@@ -31,11 +31,11 @@ top right corner of the page.
 
 • 'View HighScores' page is maintained that will display the entered name & corresponding score of the quiz. Users have the option to clear or reset these high scores & all previous quiz information will be erased if done.
  
-<strong>Other Features: </strong>
+<strong>Other Features: </strong> <br>
 Responsive:
 When the browser window size is reduced to a point where the page becomes responsive or this page were to be accessed on a mobile browser, the menu tabs are converted to a drop down menu which is shown with a 3-horizontal line icon in top right corner of the page. Clicking on it opens or closes the menu options & available pages can be accessed from here.
 
-<strong>Testing: </strong>
+<strong>Testing: </strong> <br>
 Unit tested the page on Windows (Chrome, IE11 & Edge), Mac, Mobile to ensure that the layout is consistent in full view as well as in the responsive mode.
 
 <strong> Code Installation: </strong> <br>
