@@ -17,13 +17,13 @@ This is timed quiz on JavaScript fundamentals that stores high scores. It have m
 <strong> Description: </strong> <br>
  This application is a 10 question multiple choice quiz on the topic of web development. User has 2 minutes in which to try & answer all questions. At the end of the quiz, user names can be submitted & the corresponding quiz score will be recorded against it.
 
-. For every correct answer, 10 points are awarded. For every incorrect answer, a buzzer sounds & 5 seconds are deducted from the remaining time. In both cases, either 'Correct'
+• For every correct answer, 10 points are awarded. For every incorrect answer, a buzzer sounds & 5 seconds are deducted from the remaining time. In both cases, either 'Correct'
 or 'Wrong' is displayed once an option choice is selected. Users cannot change the answer choice once selected. Countdown timer of the remaining time is shown to the user in the
 top right corner of the page.
 
-. As quiz time elapses, when the last 30 seconds remain, an alert message is shown to the user.
+• As quiz time elapses, when the last 30 seconds remain, an alert message is shown to the user.
 
-. 'View HighScores' page is maintained that will display the entered name & corresponding score of the quiz. Users have the option to clear or reset these high scores &
+• 'View HighScores' page is maintained that will display the entered name & corresponding score of the quiz. Users have the option to clear or reset these high scores &
 all previous quiz information will be erased if done.
 
 <strong> Other Features: </strong> <br>
