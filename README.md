@@ -24,14 +24,19 @@ Apply learnings from Javascript with HTML, CSS & Bootstrap to build a multi-page
 <strong>Instruction: </strong> <br>
 • For every correct answer, 10 points are awarded. For every incorrect answer, a buzzer sounds & 5 seconds are deducted from the remaining time. In both cases, either 'Correct' or 'Wrong', is displayed once an option choice is selected. Users cannot change the answer choice once selected in the instance.
 
-or 'Wrong' is displayed once an option choice is selected. Users cannot change the answer choice once selected. Countdown timer of the remaining time is shown to the user in the
+• Countdown timer of the remaining time is shown to the user in the
 top right corner of the page.
 
 • As quiz time elapses, when the last 30 seconds remain, an alert message is shown to the user.
 
-• 'View HighScores' page is maintained that will display the entered name & corresponding score of the quiz. Users have the option to clear or reset these high scores &
-all previous quiz information will be erased if done.
+• 'View HighScores' page is maintained that will display the entered name & corresponding score of the quiz. Users have the option to clear or reset these high scores & all previous quiz information will be erased if done.
+ 
+<strong>Other Features: </strong> <br>
+Responsive:
+When the browser window size is reduced to a point where the page becomes responsive or this page were to be accessed on a mobile browser, the menu tabs are converted to a drop down menu which is shown with a 3-horizontal line icon in top right corner of the page. Clicking on it opens or closes the menu options & available pages can be accessed from here.
 
+<strong>Testing: </strong> <br>
+Unit tested the page on Windows (Chrome, IE11 & Edge), Mac, Mobile to ensure that the layout is consistent in full view as well as in the responsive mode.
 
 <strong> Code Installation: </strong> <br>
 $ cd [path_to_save_codebase] <br>
@@ -39,6 +44,9 @@ $ git clone https://github.com/arti-karnik/Javascript-Quizzy <br>
 
 <strong> Github Profile: </strong> <br>
 https://github.com/arti-karnik
+
+<strong> Code-base: </strong> <br>
+https://github.com/arti-karnik/Javascript-Quizzy
 
 <strong> Application Live URL: </strong> <br>
 https://arti-karnik.github.io/Javascript-Quizzy/
