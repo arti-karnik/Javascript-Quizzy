@@ -2,6 +2,8 @@
 /*--------------------------------------------------------------
 # Element and Variable declaration
 --------------------------------------------------------------*/
+var gameOverEL = document.getElementById('container');
+
 var submitButton = document.getElementById('submit');
 var tryAgainButton = document.getElementById('again');
 var correctEl = document.getElementById('correct');

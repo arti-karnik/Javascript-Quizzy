@@ -6,8 +6,7 @@ var highscoreEl = document.getElementById('row-highscore');
 var goBackButton = document.getElementById('goBack');
 var clearButton = document.getElementById('clear');
 var highScoreTitleEl = document.getElementById('highScore-title');
-var isScoreSaved;
-
+var highscores;
 /*--------------------------------------------------------------
 # Initialize method
 --------------------------------------------------------------*/
@@ -20,7 +19,7 @@ function init() {
 --------------------------------------------------------------*/
 function basicUI() {
         
-    if (isScoreSaved) {
+    if (highscores) {
         clearButton.disabled = false;
         highScoreTitleEl.textContent = "High Scores";
     } else {
@@ -49,20 +48,15 @@ clearButton.addEventListener("click", function() {
 # Method to Show scores 
 --------------------------------------------------------------*/
 function showScores() {
-    var highscores = JSON.parse(localStorage.getItem("highscores"));
+    highscores = JSON.parse(localStorage.getItem("highscores"));
     if (!highscores) { 
-        isScoreSaved = false;
         basicUI();
         return [] };
-        
         
     for (var i=0; i<highscores.length; i++) {
         createScoreElement(highscores[i]);
     }
     createHeaderElement();
-        
-    
-    isScoreSaved = true;
 }
 function createScoreElement(object) {
     var item = object;
@@ -113,12 +107,12 @@ function createHeaderElement() {
 # Method to clear scores 
 --------------------------------------------------------------*/
 function clearScores() {
-    isScoreSaved = false;
     while (highscoreEl.firstChild) {
         highscoreEl.removeChild(highscoreEl.firstChild);
     }
     localStorage.clear("highscores");
-    highScoreTitleEl.textContent = isScoreSaved ? "High Scores" : "No High Scores";
-    clearButton.disabled = !isScoreSaved;
+    highscores = null;
+    highScoreTitleEl.textContent = "No High Scores";
+    clearButton.disabled = true;
 }
 init();
