@@ -197,25 +197,29 @@ button {
   border-radius: 25px;
   border: 2px solid #010002;
 }
-
-@media (max-width: 480px) {
-  #timeRemaining {
-      padding: 0px;
-      margin: 0px;
-  }
+#timeRemaining-mobile {
+  margin: 5px;
+  padding:10px;
+  color : whitesmoke;
+  background-color: #1e5294;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-radius: 25px;
+  border: 2px solid #010002;
 }
-
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+    }
+}
 /*--------------------------------------------------------------
 # Game Over page
 --------------------------------------------------------------*/
 .score {
   font-weight: bold;
 }
-/*
-#gameover .title {    
-  color: black;
-  font-weight: bold;
-}*/
+
 
 /*--------------------------------------------------------------
 # View High-score page

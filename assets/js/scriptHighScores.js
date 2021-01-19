@@ -57,50 +57,56 @@ function showScores() {
         
         
     for (var i=0; i<highscores.length; i++) {
-         var item = highscores[i];
-            
-        var row = document.createElement('div');
-        row.setAttribute("class", "row");
-        row.setAttribute("id", "row");
-            
-        var col1 = document.createElement('div');
-        col1.setAttribute("class", "col-sm");
-        col1.innerHTML = item.name;
-        col1.style.textAlign = "center";
-            
-        var col2 = document.createElement('div');
-        col2.setAttribute("class", "col-sm");
-        col2.innerHTML = item.score;
-        col2.style.textAlign = "center";
-            
-        row.appendChild(col1);
-        row.appendChild(col2);
-        highscoreEl.prepend(row);
+        createScoreElement(highscores[i]);
     }
+    createHeaderElement();
         
+    
+    isScoreSaved = true;
+}
+function createScoreElement(object) {
+    var item = object;
+            
+    var row = document.createElement('div');
+    row.setAttribute("class", "row");
+    row.setAttribute("id", "row");
+        
+    var col1 = document.createElement('div');
+    col1.setAttribute("class", "col-md-6");
+    col1.innerHTML = item.name;
+    col1.style.textAlign = "center";
+        
+    var col2 = document.createElement('div');
+    col2.setAttribute("class", "col-md-6");
+    col2.innerHTML = item.score;
+    col2.style.textAlign = "center";
+        
+    row.appendChild(col1);
+    row.appendChild(col2);
+    highscoreEl.prepend(row);
+}
+function createHeaderElement() {
     var row = document.createElement('div');
     row.setAttribute("class", "row");
     row.setAttribute("id", "row");
     
     var col1 = document.createElement('div');
-    col1.setAttribute("class", "col-sm");
+    col1.setAttribute("class", "col-md-6");
     col1.textContent = "NAME";
     col1.setAttribute("font-weight", "bold");
     col1.style.fontWeight = "bold";
     col1.style.textAlign = "center";
     
     var col2 = document.createElement('div');
-    col2.setAttribute("class", "col-sm");
+    col2.setAttribute("class", "col-md-6");
     col2.setAttribute("text-align:", "center");
     col2.textContent = "SCORE";
     col2.style.fontWeight = "bold";
     col2.style.textAlign = "center";
     
     row.appendChild(col1);
-    
     row.appendChild(col2);
     highscoreEl.prepend(row);
-    isScoreSaved = true;
 }
 
 /*--------------------------------------------------------------

@@ -2,10 +2,9 @@
 /*--------------------------------------------------------------
 # Element and Variable declaration
 --------------------------------------------------------------*/
-var questionListEL1 = document.getElementById('Question');
 var questionListEL = document.getElementById('Question');
-
 var timeRemainingEL = document.getElementById('timeRemaining');
+var mobileTimeEl = document.getElementById('timeRemaining-mobile');
 var resultEl = document.getElementById('result');
 var questionNo = document.getElementById('questionNo');
 var warningEl  = document.getElementById('warning');
@@ -150,7 +149,8 @@ function startTimer() {
     timer = setInterval(function() {
         seconds -= 1;
         timeRemainingEL.innerHTML =  "Time Left : " + getMinutes(seconds);
-
+        mobileTimeEl.innerHTML = timeRemainingEL.textContent;
+        
         if (seconds <= warningseconds && seconds > 0) {
             showWarning();
         }

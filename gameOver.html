@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ======= Bootstrap files ======= -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+   <!-- ======= Bootstrap files ======= -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
     <!-- ======= CSS files ======= -->
     <link rel="stylesheet" href="./assets/css/style.css"/>
 
@@ -18,31 +20,35 @@
 
 <!-- ======= Body starts ======= -->
 <body>
-    <!-- ======= Header/ Navbar starts ======= -->
+    <!-- ======= Header/Nav starts ======= -->
     <header>
-        <nav class="navbar navbar-expand-lg sticky-top" role="navigation">
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="ViewHighScores.html">View High Scores </a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav mx-auto text-center">
-                <li class="nav-item">
-                    <h1 id="nav-title">  <span class="d-none d-md-inline" id="nav-title"> Web-Development Quiz </span>
-                    </h1>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ViewHighScores.html">View High-Scores</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav mr-auto text-center">
+                    <li class="nav-item">
+                        <h1 id="nav-title">  <span class="d-none d-md-inline" id="nav-title"> Web-Development Quiz </span>
+                        </h1>
+                    </li>
+                </ul>
+                <span class="navbar-text">
                     <a class="nav-link" href="#" id="timeRemaining"> Total Time: 02:00 </a>
-                </li>
-            </ul>
+                </span>
+            </div>
         </nav>
-    </header>
+     </header>
     <!-- ======= Header ends here ======= -->
+
 
     <!-- ======= Section starts ======= -->
     <section class="section">
@@ -56,21 +62,20 @@
             </div>
             <div class="row text-center">
                 <div class="col-sm"> 
-                    <p>
-                        <strong>  Here's your result: </strong> <br>  
+                    <p class="text-left">
+                        <strong> <i> Here's your result: </strong> </i> <br>  
                         Correct answers:  <span id="correct" class="font-weight-bold"> </span> <br>
                         Your Final score is: <span id="score" class="font-weight-bold"></span> <br> <br>
-                        
-                        To record your score, enter your Name and Submit. If you want to retry click 'Try Again'.
-                        Score submitted can be viewed on the High score page.
+                        To record your score, enter your Name and click Submit. If you want to retry game again,  click 'Try Again'.
+                        Score submitted can be viewed on the High-Score page with corresponding name.
                         <br> 
                     </p>
                 </div>
             </div>
-            <div class="row text-left"> 
+            <div class="row"> 
                 <div class="col-sm">
-                    <p>
-                        Enter your Name : <input type="text" id="name" placeholder="">
+                    <p class="text-left">
+                        Enter Name <input type="text" id="name" placeholder="">
                     </p>
                 </div>
             </div>
