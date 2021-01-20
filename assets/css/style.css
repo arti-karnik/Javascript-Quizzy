@@ -3,6 +3,12 @@
 /*--------------------------------------------------------------
 # Body
 --------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
   background-color: #efefef;
@@ -68,7 +74,6 @@ section {
   bottom: 0;
   width: 100%;
   background-color: #252729;
-  height:10%;
  }
 /*--------------------------------------------------------------
 # Common CSS
@@ -208,9 +213,17 @@ button {
   border-radius: 25px;
   border: 2px solid #010002;
 }
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 80%;
+@media only screen and (max-width: 420px) {
+   
+    .container-button {
+      margin-bottom: 11%;
+    }
+    .container {
+      width: 100%;
+    }
+    .footer {
+      height: 10%;  
+      background-color: rebeccapurple; 
     }
 }
 /*--------------------------------------------------------------
