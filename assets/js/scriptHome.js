@@ -40,7 +40,7 @@ function createTitleElement() {
 
     var colEl = document.createElement("div");
     colEl.setAttribute("class", "col-sm");
-    instructionEl.append(rowEl);
+    instructionEl.appendChild(rowEl);
 }
 /*--------------------------------------------------------------
 # Method to create Heading Element 
