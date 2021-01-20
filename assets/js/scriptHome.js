@@ -74,7 +74,7 @@ function createInstructionElement() {
     }
     colEl.appendChild(ulElement);
     rowEl.appendChild(colEl);
-    instructionEl.append(rowEl);
+    instructionEl.appendChild(rowEl);
 }
 /*--------------------------------------------------------------
 # Start Button event

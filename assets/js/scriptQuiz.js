@@ -266,9 +266,9 @@ function showWarning()
 function gameOver() {
     warningEl.style.visibility = "visible";
     
-    setTimeout(() => {
+    setTimeout(function(){ 
         localStorage.setItem("score",score);
-       window.location.href = "gameOver.html";
+        window.location.href = "gameOver.html";
         }, 2000);
 }
 /*--------------------------------------------------------------
