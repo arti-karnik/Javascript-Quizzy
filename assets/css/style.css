@@ -205,27 +205,12 @@ button {
   border-radius: 25px;
   border: 2px solid #010002;
 }
-@media only screen and (max-width: 420px) {
-   
-    .container-button {
-      margin-bottom: 11%;
-    }
-    .container {
-      width: 100%;
-    }
-    .footer {
-      height: 10%;  
-      background-color: rebeccapurple; 
-    }
-}
 /*--------------------------------------------------------------
 # Game Over page
 --------------------------------------------------------------*/
 .score {
   font-weight: bold;
 }
-
-
 /*--------------------------------------------------------------
 # View High-score page
 --------------------------------------------------------------*/
@@ -244,6 +229,23 @@ button {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
  /*********************************************************************/
+
+ /*--------------------------------------------------------------
+# Mobile specific CSS
+--------------------------------------------------------------*/
+
+ @media only screen and (max-width: 420px) {
+   
+  .container-button {
+    margin-bottom: 15%;
+  }
+  .container {
+    width: 100%;
+  }
+  .footer {
+    height: 7%; 
+  }
+}
 
 
 
