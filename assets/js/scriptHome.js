@@ -54,7 +54,7 @@ function createHeadingElement() {
     colEl.setAttribute("class", "col-sm");
     colEl.innerHTML = heading;
     rowEl.appendChild(colEl);
-    instructionEl.append(rowEl);
+    instructionEl.appendChild(rowEl);
 }
 /*--------------------------------------------------------------
 # Method to create Instruction Element Element 

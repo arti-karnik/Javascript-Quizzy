@@ -195,7 +195,7 @@ function clickAnswer(userAnswer, correctAnswer) {
     } else {
         wrongAnswer();
     }
-    setTimeout(() => {
+    setTimeout(function(){ 
         changeQuestionNo();
     }, 1000);
 }
